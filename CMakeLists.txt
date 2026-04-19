@@ -17,7 +17,7 @@ message(STATUS "OpenCV include dirs: ${OpenCV_INCLUDE_DIRS}")
 message(STATUS "OpenCV libraries: ${OpenCV_LIBS}")
 
 # 声明一个可执行文件，由 main.cpp 生成
-# add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} ./src/main.cpp)
 
 # 为目标可执行文件链接 OpenCV 库
-# target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
