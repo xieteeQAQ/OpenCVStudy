@@ -9,7 +9,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 查找系统中安装的 OpenCV 库
 # 如果 Homebrew 安装的路径未被自动找到，可以尝试设置 OpenCV_DIR 变量
-set(OpenCV_DIR "/opt/homebrew/Cellar/opencv/4.13.0_8/lib/cmake/opencv4") # Apple Silicon Macs
+if (APPLE)
+    set(OpenCV_DIR "/opt/homebrew/Cellar/opencv/4.13.0_8/lib/cmake/opencv4") # Apple Silicon Macs
+elseif(WIN32)
+    set(OpenCV_DIR "E:\\opencv\\build")
+endif()
 find_package(OpenCV REQUIRED)
 
 # 打印 OpenCV 的包含目录和库文件（便于调试）
@@ -27,3 +31,5 @@ add_executable(video src/video.cpp
 target_include_directories(video PRIVATE ${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(video ${OpenCV_LIBS})
 # 为目标可执行文件链接 OpenCV 库
+
+set_target_properties(video PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/bin)
