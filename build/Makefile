@@ -117,41 +117,177 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named OpenCV_Demo
+# Target rules for targets named video
 
 # Build rule for target.
-OpenCV_Demo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OpenCV_Demo
-.PHONY : OpenCV_Demo
+video: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 video
+.PHONY : video
 
 # fast build rule for target.
-OpenCV_Demo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenCV_Demo.dir/build.make CMakeFiles/OpenCV_Demo.dir/build
-.PHONY : OpenCV_Demo/fast
+video/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/build
+.PHONY : video/fast
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+#=============================================================================
+# Target rules for targets named recognition
+
+# Build rule for target.
+recognition: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 recognition
+.PHONY : recognition
+
+# fast build rule for target.
+recognition/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/recognition.dir/build.make CMakeFiles/recognition.dir/build
+.PHONY : recognition/fast
+
+src/func.o: src/func.cpp.o
+.PHONY : src/func.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenCV_Demo.dir/build.make CMakeFiles/OpenCV_Demo.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/func.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/func.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/recognition.dir/build.make CMakeFiles/recognition.dir/src/func.cpp.o
+.PHONY : src/func.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/func.i: src/func.cpp.i
+.PHONY : src/func.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenCV_Demo.dir/build.make CMakeFiles/OpenCV_Demo.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/func.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/func.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/recognition.dir/build.make CMakeFiles/recognition.dir/src/func.cpp.i
+.PHONY : src/func.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/func.s: src/func.cpp.s
+.PHONY : src/func.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenCV_Demo.dir/build.make CMakeFiles/OpenCV_Demo.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/func.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/func.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/recognition.dir/build.make CMakeFiles/recognition.dir/src/func.cpp.s
+.PHONY : src/func.cpp.s
+
+src/mainProcess.o: src/mainProcess.cpp.o
+.PHONY : src/mainProcess.o
+
+# target to build an object file
+src/mainProcess.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/mainProcess.cpp.o
+.PHONY : src/mainProcess.cpp.o
+
+src/mainProcess.i: src/mainProcess.cpp.i
+.PHONY : src/mainProcess.i
+
+# target to preprocess a source file
+src/mainProcess.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/mainProcess.cpp.i
+.PHONY : src/mainProcess.cpp.i
+
+src/mainProcess.s: src/mainProcess.cpp.s
+.PHONY : src/mainProcess.s
+
+# target to generate assembly for a file
+src/mainProcess.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/mainProcess.cpp.s
+.PHONY : src/mainProcess.cpp.s
+
+src/parameter.o: src/parameter.cpp.o
+.PHONY : src/parameter.o
+
+# target to build an object file
+src/parameter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/parameter.cpp.o
+.PHONY : src/parameter.cpp.o
+
+src/parameter.i: src/parameter.cpp.i
+.PHONY : src/parameter.i
+
+# target to preprocess a source file
+src/parameter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/parameter.cpp.i
+.PHONY : src/parameter.cpp.i
+
+src/parameter.s: src/parameter.cpp.s
+.PHONY : src/parameter.s
+
+# target to generate assembly for a file
+src/parameter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/parameter.cpp.s
+.PHONY : src/parameter.cpp.s
+
+src/process.o: src/process.cpp.o
+.PHONY : src/process.o
+
+# target to build an object file
+src/process.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/process.cpp.o
+.PHONY : src/process.cpp.o
+
+src/process.i: src/process.cpp.i
+.PHONY : src/process.i
+
+# target to preprocess a source file
+src/process.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/process.cpp.i
+.PHONY : src/process.cpp.i
+
+src/process.s: src/process.cpp.s
+.PHONY : src/process.s
+
+# target to generate assembly for a file
+src/process.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/process.cpp.s
+.PHONY : src/process.cpp.s
+
+src/recognition.o: src/recognition.cpp.o
+.PHONY : src/recognition.o
+
+# target to build an object file
+src/recognition.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/recognition.dir/build.make CMakeFiles/recognition.dir/src/recognition.cpp.o
+.PHONY : src/recognition.cpp.o
+
+src/recognition.i: src/recognition.cpp.i
+.PHONY : src/recognition.i
+
+# target to preprocess a source file
+src/recognition.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/recognition.dir/build.make CMakeFiles/recognition.dir/src/recognition.cpp.i
+.PHONY : src/recognition.cpp.i
+
+src/recognition.s: src/recognition.cpp.s
+.PHONY : src/recognition.s
+
+# target to generate assembly for a file
+src/recognition.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/recognition.dir/build.make CMakeFiles/recognition.dir/src/recognition.cpp.s
+.PHONY : src/recognition.cpp.s
+
+src/video.o: src/video.cpp.o
+.PHONY : src/video.o
+
+# target to build an object file
+src/video.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/video.cpp.o
+.PHONY : src/video.cpp.o
+
+src/video.i: src/video.cpp.i
+.PHONY : src/video.i
+
+# target to preprocess a source file
+src/video.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/video.cpp.i
+.PHONY : src/video.cpp.i
+
+src/video.s: src/video.cpp.s
+.PHONY : src/video.s
+
+# target to generate assembly for a file
+src/video.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/src/video.cpp.s
+.PHONY : src/video.cpp.s
 
 # Help Target
 help:
@@ -161,10 +297,26 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... OpenCV_Demo"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... recognition"
+	@echo "... video"
+	@echo "... src/func.o"
+	@echo "... src/func.i"
+	@echo "... src/func.s"
+	@echo "... src/mainProcess.o"
+	@echo "... src/mainProcess.i"
+	@echo "... src/mainProcess.s"
+	@echo "... src/parameter.o"
+	@echo "... src/parameter.i"
+	@echo "... src/parameter.s"
+	@echo "... src/process.o"
+	@echo "... src/process.i"
+	@echo "... src/process.s"
+	@echo "... src/recognition.o"
+	@echo "... src/recognition.i"
+	@echo "... src/recognition.s"
+	@echo "... src/video.o"
+	@echo "... src/video.i"
+	@echo "... src/video.s"
 .PHONY : help
 
 
