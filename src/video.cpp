@@ -5,6 +5,12 @@
 #include "../include/mainProcess.hpp"
 #include "../include/parameter.hpp"
 
+// 以免忘记windows的编译操作
+// 记得改路径
+// 记得创建image
+// cmake -B build -A x64 -DOpenCV_DIR="E:/opencv/build"
+// cmake --build build --config Release
+
 cv::VideoCapture cap;
 cv::VideoWriter writer;
 
@@ -22,7 +28,7 @@ int main()
     createTrackbars();
 
 #ifdef _WIN32
-    cap.open(1);
+    cap.open(0);
 #else
     cap.open(0);
 #endif

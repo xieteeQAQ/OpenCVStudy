@@ -1,7 +1,7 @@
 #include "../include/parameter.hpp"
 
 #ifdef _WIN32
-std::string savePath = "/Users/xietee/program/OpenCVStudy/image";
+std::string savePath = "/Users/xietee/program/OpenCVStudy/image"; // 需要调整
 #else
 std::string savePath = "/Users/xietee/program/OpenCVStudy/image";
 #endif

@@ -123,7 +123,7 @@ void createTrackbars()
     cv::setTrackbarPos("EDGE HIGH : ", "control", high);
     cv::setTrackbarPos("BLUR CK : ", "control", blur_slider);
     cv::setTrackbarPos("BLUR SIGMA : ", "control", sigma_slider);
-    cv::setTrackbarPos("colorRecognition : ", "control", colorRecognition);
+    cv::setTrackbarPos("COLORRCOG : ", "control", colorRecognition);
 
     cv::setTrackbarPos("H_MIN : ", "control", h_min);
     cv::setTrackbarPos("H_MAX : ", "control", h_max);
