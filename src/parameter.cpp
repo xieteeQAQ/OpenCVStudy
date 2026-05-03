@@ -1,6 +1,10 @@
-#include"../include/parameter.hpp"
+#include "../include/parameter.hpp"
 
+#ifdef _WIN32
 std::string savePath = "/Users/xietee/program/OpenCVStudy/image";
+#else
+std::string savePath = "/Users/xietee/program/OpenCVStudy/image";
+#endif
 
 int enCanny = 0;
 int enGray = 0;

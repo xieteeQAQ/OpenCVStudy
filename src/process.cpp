@@ -177,30 +177,28 @@ void putTexts(cv::Mat &input, double &now)
         std::string timeText;
         if (hours == 0)
             timeText = cv::format("%02d:%02d", minutes, seconds);
-        else 
+        else
             timeText = cv::format("%02d:%02d:%02d", hours, minutes, seconds);
         std::string text = std::string("REC ") + timeText;
 
         int baseline = 0;
         cv::Size size = cv::getTextSize(text,
-                        cv::FONT_HERSHEY_SIMPLEX,
-                        Setting_text_size,
-                        Setting_text_thickness,
-                        &baseline
-        );
+                                        cv::FONT_HERSHEY_SIMPLEX,
+                                        Setting_text_size,
+                                        Setting_text_thickness,
+                                        &baseline);
 
         int x = input.cols - size.width - 20;
         int y = 40;
 
-        cv::circle(input, cv::Point(x - 20, y - 10), 9, cv::Scalar(0,0,255), -1);
+        cv::circle(input, cv::Point(x - 20, y - 10), 9, cv::Scalar(0, 0, 255), -1);
         cv::putText(input,
                     text,
                     cv::Point(x, y),
                     cv::FONT_HERSHEY_SIMPLEX,
                     Setting_text_size,
                     cv_color::WHITE,
-                    Setting_text_thickness
-        );
+                    Setting_text_thickness);
     }
 }
 
@@ -260,7 +258,11 @@ int keyCheck(const cv::Mat &img, cv::VideoWriter &writer, const int &key, double
             recordStartTime = cv::getTickCount() / cv::getTickFrequency();
             std::string name = getSaveName(VIDEO);
             recording = true;
+#ifdef _WIN32
+            int fourcc = cv::VideoWriter::fourcc('M', 'J', 'P', 'G');
+#else
             int fourcc = cv::VideoWriter::fourcc('m', 'p', '4', 'v');
+#endif
             writer.open(savePath + '/' + name, fourcc, FPS, img.size());
             std::cout << "录像开始\n";
         }
