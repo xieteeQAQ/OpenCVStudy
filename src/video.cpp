@@ -1,9 +1,13 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <string>
+#include <vector>
 #include "../include/process.hpp"
 #include "../include/mainProcess.hpp"
 #include "../include/parameter.hpp"
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 // 以免忘记windows的编译操作
 // 记得改路径
@@ -14,9 +18,23 @@
 cv::VideoCapture cap;
 cv::VideoWriter writer;
 
-int main()
+int main(int argc, char *argv[])
 {
 #ifdef _WIN32
+    // 设置控制台输出为UTF-8
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    // 启用虚拟终端序列支持
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    if (hOut != INVALID_HANDLE_VALUE)
+    {
+        DWORD dwMode = 0;
+        if (GetConsoleMode(hOut, &dwMode))
+        {
+            dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+            SetConsoleMode(hOut, dwMode);
+        }
+    }
     std::cout << "运行平台 : WINDOWS\n";
 #else
     std::cout << "运行平台 : MAC\n";
@@ -32,6 +50,17 @@ int main()
 #else
     cap.open(0);
 #endif
+
+    for (size_t i = 0; i < argc; i++)
+    {
+        std::string s = argv[i];
+        
+        if (s == "-debug")
+        {
+            std::cout << "摄像头画面宽度 : " << cap.get(cv::CAP_PROP_FRAME_WIDTH) << "\n";
+            std::cout << "摄像头画面高度 : " << cap.get(cv::CAP_PROP_FRAME_HEIGHT) << "\n";
+        }
+    }
 
     if (!cap.isOpened())
     {
